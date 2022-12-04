@@ -1,11 +1,13 @@
 package br.edu.femass.model;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Autor {
     private String nome;
     private String sobrenome;
     private String nacionalidade;
+    private List<Autor> listAutores;
     private int cod = 0;
 
     public Autor(){

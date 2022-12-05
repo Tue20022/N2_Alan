@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.TelaAtendente"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AtendenteController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="407.0" prefWidth="608.0" style="-fx-background-color: #008B8B;">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnProfessor" prefHeight="38.0" prefWidth="235.0" text="Professor" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnAluno" prefHeight="38.0" prefWidth="235.0" text="Aluno" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnRealizarEmprestimo" prefHeight="38.0" prefWidth="235.0" text="Realizar Empréstimo" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnDevolverEmprestimo" prefHeight="38.0" prefWidth="235.0" text="Devolver Empréstimo" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
 </AnchorPane>

@@ -1,15 +1,21 @@
 package br.edu.femass.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.List;
 
+@Entity
 public class Leitor {
-    protected static long proxNumero = 1L;
-    protected long codigo = 0L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected long id;
     protected String nome;
     protected String endereco;
     protected String telefone;
     protected Integer prazoMaximoDevolucao;
-    protected List<Leitor> listLeitores;
+    //protected List<Leitor> listLeitores;
 
     public Leitor(){
     }
@@ -20,8 +26,8 @@ public class Leitor {
         this.telefone = telefone;
     }
 
-    public long getCodigo() {
-        return codigo;
+    public long getId() {
+        return id;
     }
 
     public String getNome() {
@@ -32,7 +38,7 @@ public class Leitor {
         this.nome = nome;
     }
 
-    public void setCodigo(long codigo){this.codigo = codigo;}
+    public void setId(long codigo){this.id = codigo;}
 
     public String getEndereco() {
         return endereco;
@@ -58,8 +64,7 @@ public class Leitor {
         this.prazoMaximoDevolucao = prazo;
     }
 
-
-    public void setListLeitores(List<Leitor> listLeitores) {
+    /*public void setListLeitores(List<Leitor> listLeitores) {
         this.listLeitores.addAll(listLeitores);
-    }
+    }*/
 }

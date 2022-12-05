@@ -12,7 +12,6 @@ public class Autor {
     private String nome;
     private String sobrenome;
     private String nacionalidade;
-
     @OneToMany(cascade = {CascadeType.ALL})
     private List<Livro> livros;
 

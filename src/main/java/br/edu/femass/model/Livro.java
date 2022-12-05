@@ -1,6 +1,7 @@
 package br.edu.femass.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Livro {
@@ -10,6 +11,8 @@ public class Livro {
     private String titulo;
     @ManyToOne(cascade = {CascadeType.ALL})
     private Autor autor;
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Exemplar> exemplares;
 
     public Livro(){
 
@@ -18,6 +21,10 @@ public class Livro {
     public Livro (String titulo, Autor autor){
         this.titulo = titulo;
         this.autor = autor;
+    }
+
+    public void addListExemplar(Exemplar exemplar){
+        exemplares.add(exemplar);
     }
 
     public String getTitulo() {

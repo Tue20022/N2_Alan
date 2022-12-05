@@ -50,7 +50,19 @@ public class BibliotecarioController implements Initializable{
 
     @FXML
     private void btnExemplar(ActionEvent event){
-        System.out.println("exemplar");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/telaExemplar.fxml"));
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/styles/Styles.css");
+            scene.getRoot().setStyle("-fx-font-family: 'serif'");
+            Stage stage = new Stage();
+            stage.setTitle("Cadastro de Exemplares");
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML

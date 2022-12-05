@@ -1,11 +1,16 @@
 package br.edu.femass.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public class Exemplar {
-    private Long codigo = 0L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private LocalDate dataAquisicao;
     private String titulo;
+    @ManyToOne(cascade = {CascadeType.ALL})
     private Livro livro;
 
     public Exemplar(){
@@ -16,14 +21,13 @@ public class Exemplar {
         this.livro = livro;
         this.titulo = livro.getTitulo();
         this.dataAquisicao = LocalDate.now();
-        this.codigo++;
     }
 
     public Long getCodigo() {
-        return this.codigo;
+        return this.id;
     }
     public void setCodigo(long codigo){
-        this.codigo = codigo;
+        this.id = codigo;
     }
 
     public LocalDate getDataAquisicao() {

@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
 
 @Entity
 public class Leitor {
@@ -15,7 +14,6 @@ public class Leitor {
     protected String endereco;
     protected String telefone;
     protected Integer prazoMaximoDevolucao;
-    //protected List<Leitor> listLeitores;
 
     public Leitor(){
     }
@@ -63,8 +61,4 @@ public class Leitor {
     public void setPrazoMaximoDevolucao(Integer prazo) {
         this.prazoMaximoDevolucao = prazo;
     }
-
-    /*public void setListLeitores(List<Leitor> listLeitores) {
-        this.listLeitores.addAll(listLeitores);
-    }*/
 }

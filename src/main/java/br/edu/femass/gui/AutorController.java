@@ -9,28 +9,42 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
-public class autorController implements Initializable {
+public class AutorController implements Initializable {
     
     @FXML
-    private Label txtNome;
+    private TextField txtNome;
     @FXML
-    private Label txtSobrenome;
+    private TextField txtSobrenome;
     @FXML
-    private Label txtNacionalidade;
+    private TextField txtNacionalidade;
+    private ListView<Autor> LstAutores;
+    private DaoAutor dao = new DaoAutor();
 
     @FXML
     private void btnDeletar(ActionEvent event){
         System.out.println("deletar");
     }
-
     @FXML
     private void btnAlterar(ActionEvent event){
         System.out.println("alterar");
     }
     @FXML
+    private void btnInserir(ActionEvent event){
+        System.out.println("Inserir");
+    }
+
+    @FXML
     private void btnSalvar(ActionEvent event) {
-        System.out.println("Salvar");
+        Autor autor = new Autor(
+                txtNome.getText(),
+                txtSobrenome.getText(),
+                txtNacionalidade.getText()
+        );
+        dao.inserir(autor);
+        System.out.println(autor.getId());
     }
 
     @Override

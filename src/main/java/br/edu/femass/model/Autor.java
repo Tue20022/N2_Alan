@@ -1,14 +1,19 @@
 package br.edu.femass.model;
 
-import java.util.List;
-import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Autor {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nome;
     private String sobrenome;
     private String nacionalidade;
-    private List<Autor> listAutores;
-    private int cod = 0;
 
     public Autor(){
     }
@@ -17,7 +22,6 @@ public class Autor {
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.nacionalidade = nacionalidade;
-        this.cod++;
     }
     
     public String getNome() {
@@ -44,11 +48,7 @@ public class Autor {
         this.nacionalidade = nacionalidade;
     }
 
-    public int getCod() {
-        return cod;
-    }
-
-    public void setCod(int cod) {
-        this.cod = cod;
+    public Long getId() {
+        return id;
     }
 }

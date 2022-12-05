@@ -1,9 +1,7 @@
 package br.edu.femass.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Autor {
@@ -15,6 +13,9 @@ public class Autor {
     private String sobrenome;
     private String nacionalidade;
 
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Livro> livros;
+
     public Autor(){
     }
 
@@ -23,7 +24,11 @@ public class Autor {
         this.sobrenome = sobrenome;
         this.nacionalidade = nacionalidade;
     }
-    
+
+    public void addListLivro(Livro livro){
+        livros.add(livro);
+    }
+
     public String getNome() {
         return nome;
     }
@@ -50,5 +55,10 @@ public class Autor {
 
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return nome + sobrenome;
     }
 }

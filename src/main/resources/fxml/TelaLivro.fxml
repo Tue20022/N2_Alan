@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.LivroController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="620.0" style="-fx-background-color: #ADD8E6;">
+         <children>
+            <Button layoutX="508.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnDeletar" prefWidth="60.0" text="Deletar">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="508.0" layoutY="304.0" mnemonicParsing="false" onAction="#btnAlterar" prefWidth="60.0" text="Alterar">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="508.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnInserir" prefWidth="60.0" text="Inserir">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <TableView layoutX="14.0" layoutY="145.0" prefHeight="242.0" prefWidth="478.0">
+               <columns>
+                  <TableColumn prefWidth="52.0" text="ID" />
+                  <TableColumn prefWidth="261.0" text="Título" />
+                  <TableColumn prefWidth="164.0" text="Autor" />
+               </columns>
+            </TableView>
+            <Label layoutX="34.0" layoutY="58.0" text="Título">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTitulo" layoutX="107.0" layoutY="53.0" prefHeight="25.0" prefWidth="190.0" />
+            <Button layoutX="396.0" layoutY="91.0" mnemonicParsing="false" onAction="#btnSalvar" prefHeight="25.0" prefWidth="60.0" text="Salvar">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="35.0" layoutY="96.0" text="Autor">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cboAutor" layoutX="107.0" layoutY="91.0" prefHeight="25.0" prefWidth="190.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

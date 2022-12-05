@@ -45,21 +45,21 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="35.0" layoutY="105.0" text="Matrícula">
+            <Label layoutX="35.0" layoutY="105.0" text="Telefone">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Label>
             <TextField fx:id="txtNome" layoutX="138.0" layoutY="25.0" prefHeight="25.0" prefWidth="190.0" />
             <TextField fx:id="txtEndereco" layoutX="138.0" layoutY="61.0" prefHeight="25.0" prefWidth="190.0" />
-            <TextField fx:id="txtMatricula" layoutX="138.0" layoutY="100.0" prefHeight="25.0" prefWidth="190.0" />
+            <TextField fx:id="txtTelefone" layoutX="138.0" layoutY="100.0" prefHeight="25.0" prefWidth="190.0" />
             <Button layoutX="409.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnSalvar" prefHeight="25.0" prefWidth="60.0" text="Salvar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <TextField fx:id="txtTelefone" layoutX="138.0" layoutY="139.0" prefHeight="25.0" prefWidth="190.0" />
-            <Label layoutX="35.0" layoutY="144.0" text="Telefone">
+            <TextField fx:id="txtMatricula" layoutX="138.0" layoutY="139.0" prefHeight="25.0" prefWidth="190.0" />
+            <Label layoutX="35.0" layoutY="144.0" text="Matrícula">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>

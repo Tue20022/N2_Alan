@@ -28,11 +28,24 @@ public class BibliotecarioController implements Initializable{
             stage.show();
         }catch (Exception e){
             System.out.println(e.getMessage());
-        }  }
+        }
+    }
 
     @FXML
     private void btnLivro(ActionEvent event){
-        System.out.println("livro");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/telaLivro.fxml"));
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/styles/Styles.css");
+            scene.getRoot().setStyle("-fx-font-family: 'serif'");
+            Stage stage = new Stage();
+            stage.setTitle("Cadastro de Livros");
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML

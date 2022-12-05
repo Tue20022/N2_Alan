@@ -31,15 +31,15 @@
       </TableView>
       <Label layoutX="38.0" layoutY="77.0" text="Sobrenome">
          <font>
-            <Font name="Arial Bold" size="13.0" />
+            <Font name="Arial" size="13.0" />
          </font></Label>
       <Label layoutX="38.0" layoutY="42.0" text="Nome">
          <font>
-            <Font name="Arial Bold" size="13.0" />
+            <Font name="Arial" size="13.0" />
          </font></Label>
       <Label layoutX="36.0" layoutY="116.0" text="Nacionalidade">
          <font>
-            <Font name="Arial Bold" size="13.0" />
+            <Font name="Arial" size="13.0" />
          </font></Label>
       <TextField fx:id="txtNome" layoutX="144.0" layoutY="37.0" prefHeight="25.0" prefWidth="190.0" />
       <TextField fx:id="txtSobrenome" layoutX="144.0" layoutY="73.0" prefHeight="25.0" prefWidth="190.0" />

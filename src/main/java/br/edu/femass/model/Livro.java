@@ -1,23 +1,23 @@
 package br.edu.femass.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.*;
 
+@Entity
 public class Livro {
-    private static long proxNumero = 1L;
-    private long codigo = 0L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String titulo;
-    private List<Autor> listAutor = new ArrayList<>();
+    @ManyToOne(cascade = {CascadeType.ALL})
+    private Autor autor;
 
     public Livro(){
 
     }
 
-    public Livro (String titulo, List<Autor> listAutor){
+    public Livro (String titulo, Autor autor){
         this.titulo = titulo;
-        this.listAutor.addAll(listAutor);
-        this.codigo = proxNumero ++;
-        //atualizarCod();
+        this.autor = autor;
     }
 
     public String getTitulo() {
@@ -28,19 +28,15 @@ public class Livro {
         this.titulo = titulo;
     }
 
-    public long getCodigo() {
-        return codigo;
+    public void setAutor(Autor autor){
+        this.autor =autor;
     }
 
-    public void setCodigo(long codigo) {
-        this.codigo = codigo;
+    public long getId() {
+        return id;
     }
 
-    public List<Autor> getListAutor() {
-        return listAutor;
-    }
-
-    public void setListAutor(List<Autor> listAutor) {
-        this.listAutor = listAutor;
+    public void setId(long codigo) {
+        this.id = codigo;
     }
 }

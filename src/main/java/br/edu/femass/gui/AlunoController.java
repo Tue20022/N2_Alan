@@ -36,8 +36,8 @@ public class AlunoController implements Initializable {
         Aluno aluno = new Aluno(
                 txtNome.getText(),
                 txtEndereco.getText(),
-                txtMatricula.getText(),
-                txtTelefone.getText()
+                txtTelefone.getText(),
+                txtMatricula.getText()
         );
         dao.inserir(aluno);
         System.out.println(aluno.getId());

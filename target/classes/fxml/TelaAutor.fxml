@@ -7,7 +7,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.AutorController">
    <children>
       <Pane layoutX="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="607.0" style="-fx-background-color: #ADD8E6;">
@@ -27,12 +26,12 @@
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <TableView layoutX="14.0" layoutY="153.0" prefHeight="233.0" prefWidth="478.0">
+            <TableView fx:id="tabela" layoutX="14.0" layoutY="147.0" prefHeight="233.0" prefWidth="478.0">
                <columns>
-                  <TableColumn prefWidth="52.0" text="ID" />
-                  <TableColumn prefWidth="117.0" text="Nome" />
-                  <TableColumn prefWidth="161.0" text="Sobrenome" />
-                  <TableColumn prefWidth="147.0" text="Nacionalidade" />
+                  <TableColumn fx:id="colId" prefWidth="52.0" text="ID" />
+                  <TableColumn fx:id="colNome" prefWidth="117.0" text="Nome" />
+                  <TableColumn fx:id="colSobrenome" prefWidth="161.0" text="Sobrenome" />
+                  <TableColumn fx:id="colNacionalidade" prefWidth="147.0" text="Nacionalidade" />
                </columns>
             </TableView>
             <Label layoutX="34.0" layoutY="78.0" text="Sobrenome">

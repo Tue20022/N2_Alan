@@ -11,22 +11,22 @@
    <children>
       <Pane layoutX="-4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="607.0" style="-fx-background-color: #ADD8E6;">
          <children>
-            <Button layoutX="508.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnDeletar" prefWidth="60.0" text="Deletar">
+            <Button fx:id="btnExcluir" layoutX="508.0" layoutY="345.0" mnemonicParsing="false" onAction="#excluir_click" prefWidth="60.0" text="Deletar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="508.0" layoutY="304.0" mnemonicParsing="false" onAction="#btnAlterar" prefWidth="60.0" text="Alterar">
+            <Button fx:id="btnAlterar" layoutX="508.0" layoutY="304.0" mnemonicParsing="false" onAction="#alterar_click" prefWidth="60.0" text="Alterar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="508.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnInserir" prefWidth="60.0" text="Inserir">
+            <Button fx:id="btnIncluir" layoutX="508.0" layoutY="263.0" mnemonicParsing="false" onAction="#incluir_click" prefWidth="60.0" text="Inserir">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <TableView fx:id="tabela" layoutX="14.0" layoutY="147.0" prefHeight="233.0" prefWidth="478.0">
+            <TableView fx:id="tabela" layoutX="14.0" layoutY="147.0" onMouseClicked="#tableMouseClicked" prefHeight="233.0" prefWidth="478.0">
                <columns>
                   <TableColumn fx:id="colId" prefWidth="52.0" text="ID" />
                   <TableColumn fx:id="colNome" prefWidth="117.0" text="Nome" />
@@ -51,8 +51,8 @@
             </Label>
             <TextField fx:id="txtNome" layoutX="138.0" layoutY="26.0" prefHeight="25.0" prefWidth="190.0" />
             <TextField fx:id="txtSobrenome" layoutX="138.0" layoutY="61.0" prefHeight="25.0" prefWidth="190.0" />
-            <TextField fx:id="txtnacionalidade" layoutX="138.0" layoutY="101.0" prefHeight="25.0" prefWidth="190.0" />
-            <Button layoutX="412.0" layoutY="102.0" mnemonicParsing="false" onAction="#btnSalvar" prefHeight="25.0" prefWidth="60.0" text="Salvar">
+            <TextField fx:id="txtNacionalidade" layoutX="138.0" layoutY="101.0" prefHeight="25.0" prefWidth="190.0" />
+            <Button fx:id="btnGravar" layoutX="412.0" layoutY="102.0" mnemonicParsing="false" onAction="#gravar_click" prefHeight="25.0" prefWidth="60.0" text="Salvar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>

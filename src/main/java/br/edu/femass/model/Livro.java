@@ -46,4 +46,9 @@ public class Livro {
     public void setId(long codigo) {
         this.id = codigo;
     }
+
+    @Override
+    public String toString() {
+        return (this.titulo);
+    }
 }

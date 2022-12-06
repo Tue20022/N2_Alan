@@ -11,28 +11,28 @@
    <children>
       <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="620.0" style="-fx-background-color: #ADD8E6;">
          <children>
-            <Button layoutX="508.0" layoutY="345.0" mnemonicParsing="false" onAction="#btnDeletar" prefWidth="60.0" text="Deletar">
+            <Button fx:id="btnExcluir" layoutX="508.0" layoutY="345.0" mnemonicParsing="false" onAction="#excluir_click" prefWidth="60.0" text="Deletar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="508.0" layoutY="304.0" mnemonicParsing="false" onAction="#btnAlterar" prefWidth="60.0" text="Alterar">
+            <Button fx:id="btnAlterar" layoutX="508.0" layoutY="304.0" mnemonicParsing="false" onAction="#alterar_click" prefWidth="60.0" text="Alterar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="508.0" layoutY="263.0" mnemonicParsing="false" onAction="#btnInserir" prefWidth="60.0" text="Inserir">
+            <Button fx:id="btnIncluir" layoutX="508.0" layoutY="263.0" mnemonicParsing="false" onAction="#incluir_click" prefWidth="60.0" text="Inserir">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>
             </Button>
-            <TableView layoutX="14.0" layoutY="186.0" prefHeight="200.0" prefWidth="478.0">
+            <TableView fx:id="tabela" layoutX="14.0" layoutY="186.0" onMouseClicked="#tableMouseClicked" prefHeight="200.0" prefWidth="478.0">
                <columns>
-                  <TableColumn prefWidth="52.0" text="ID" />
-                  <TableColumn prefWidth="92.0" text="Nome" />
-                  <TableColumn prefWidth="116.0" text="Endereço" />
-                  <TableColumn prefWidth="120.0" text="Disciplina" />
-                  <TableColumn prefWidth="97.0" text="Telefone" />
+                  <TableColumn fx:id="colId" prefWidth="52.0" text="ID" />
+                  <TableColumn fx:id="colNome" prefWidth="92.0" text="Nome" />
+                  <TableColumn fx:id="colEndereco" prefWidth="116.0" text="Endereço" />
+                  <TableColumn fx:id="colDisciplina" prefWidth="120.0" text="Disciplina" />
+                  <TableColumn fx:id="colTelefone" prefWidth="97.0" text="Telefone" />
                </columns>
             </TableView>
             <Label layoutX="34.0" layoutY="65.0" text="Endereço">
@@ -53,7 +53,7 @@
             <TextField fx:id="txtNome" layoutX="138.0" layoutY="25.0" prefHeight="25.0" prefWidth="190.0" />
             <TextField fx:id="txtEndereco" layoutX="138.0" layoutY="61.0" prefHeight="25.0" prefWidth="190.0" />
             <TextField fx:id="txtDisciplina" layoutX="138.0" layoutY="100.0" prefHeight="25.0" prefWidth="190.0" />
-            <Button layoutX="409.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnSalvar" prefHeight="25.0" prefWidth="60.0" text="Salvar">
+            <Button fx:id="btnGravar" layoutX="409.0" layoutY="140.0" mnemonicParsing="false" onAction="#gravar_click" prefHeight="25.0" prefWidth="60.0" text="Salvar">
                <font>
                   <Font name="Arial" size="12.0" />
                </font>

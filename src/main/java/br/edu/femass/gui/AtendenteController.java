@@ -32,7 +32,7 @@ public class AtendenteController implements Initializable {
     @FXML
     public void btnAluno(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/TelaAluno.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/TelaAluno1.fxml"));
 
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/styles/Styles.css");

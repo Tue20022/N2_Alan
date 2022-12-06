@@ -13,6 +13,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+
+import javax.swing.*;
 
 public class AutorController implements Initializable {
     
@@ -22,6 +25,14 @@ public class AutorController implements Initializable {
     private TextField txtSobrenome;
     @FXML
     private TextField txtNacionalidade;
+    @FXML
+    private Button btnIncluir;
+    @FXML
+    private Button btnGravar;
+    @FXML
+    private Button btnExcluir;
+    @FXML
+    private Button btnAlterar;
     @FXML
     private TableView<Autor> tabela = new TableView<Autor>();
     @FXML
@@ -33,30 +44,72 @@ public class AutorController implements Initializable {
     @FXML
     private TableColumn<Autor,String> colNacionalidade = new TableColumn<>();
     private DaoAutor dao = new DaoAutor();
+    Autor autor = new Autor();
+    private Boolean incluindo;
 
     @FXML
-    private void btnDeletar(ActionEvent event){
-        System.out.println("deletar");
-    }
-    @FXML
-    private void btnAlterar(ActionEvent event){
-        System.out.println("alterar");
-    }
-    @FXML
-    private void btnInserir(ActionEvent event){
-        System.out.println("Inserir");
-    }
-
-    @FXML
-    private void btnSalvar(ActionEvent event) {
-        Autor autor = new Autor(
-                txtNome.getText(),
-                txtSobrenome.getText(),
-                txtNacionalidade.getText()
-        );
-        dao.inserir(autor);
+    private void gravar_click(ActionEvent event) {
+        autor.setNome(txtNome.getText());
+        autor.setSobrenome(txtSobrenome.getText());
+        autor.setNacionalidade(txtNacionalidade.getText());
+        if (incluindo) {
+            dao.inserir(autor);
+        } else {
+            dao.alterar(autor);
+        }
         preencherTabela();
-        System.out.println(autor.getId());
+        editar(false);
+
+    }
+
+    @FXML
+    private void incluir_click(ActionEvent event) {
+        editar(true);
+
+        incluindo = true;
+        autor = new Autor();
+        txtNome.setText("");
+        txtSobrenome.setText("");
+        txtNacionalidade.setText("");
+        txtNome.requestFocus();
+    }
+
+    @FXML
+    private void alterar_click(ActionEvent event) {
+        editar(true);
+
+        incluindo = false;
+    }
+
+    @FXML
+    private void excluir_click(ActionEvent event) {
+        dao.apagar(autor);
+        preencherTabela();
+    }
+
+    private void editar(boolean habilitar) {
+        tabela.setDisable(habilitar);
+        txtNome.setDisable(!habilitar);
+        txtSobrenome.setDisable(!habilitar);
+        txtNacionalidade.setDisable(!habilitar);
+        btnGravar.setDisable(!habilitar);
+        btnAlterar.setDisable(habilitar);
+        btnIncluir.setDisable(habilitar);
+        btnExcluir.setDisable(habilitar);
+    }
+    private void exibirDados(){
+        this.autor = tabela.getSelectionModel().getSelectedItem();
+
+        if(autor==null) return;
+
+        txtNome.setText(autor.getNome());
+        txtSobrenome.setText(autor.getSobrenome());
+        txtNacionalidade.setText(autor.getNacionalidade());
+    }
+
+    @FXML
+    public void tableMouseClicked(MouseEvent event){
+        exibirDados();
     }
 
     private void preencherTabela() {

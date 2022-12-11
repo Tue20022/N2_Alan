@@ -33,7 +33,7 @@ public class ExemplarController implements Initializable {
     @FXML
     private TableColumn<Exemplar,Long> colId = new TableColumn<>();
     @FXML
-    private TableColumn<Exemplar,String> colTitulo = new TableColumn<>();
+    private TableColumn<Livro,String> colTitulo = new TableColumn<>();
     @FXML
     private TableColumn<Livro,String> colLivro = new TableColumn<>();
 
@@ -79,7 +79,7 @@ public class ExemplarController implements Initializable {
         );
 
         colTitulo.setCellValueFactory(
-                new PropertyValueFactory<Exemplar, String>("titulo")
+                new PropertyValueFactory<Livro, String>("titulo")
         );
 
         colLivro.setCellValueFactory(

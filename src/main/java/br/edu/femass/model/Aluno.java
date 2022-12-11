@@ -5,7 +5,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public class Aluno extends Leitor{
 
     private String matricula;

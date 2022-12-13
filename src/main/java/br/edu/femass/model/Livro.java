@@ -7,7 +7,7 @@ import java.util.List;
 public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String titulo;
     @ManyToOne(cascade = {CascadeType.ALL})
     private Autor autor;

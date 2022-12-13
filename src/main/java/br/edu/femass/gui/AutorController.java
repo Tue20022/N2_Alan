@@ -137,5 +137,6 @@ public class AutorController implements Initializable {
                 new PropertyValueFactory<Autor, String>("nacionalidade")
         );
         preencherTabela();
+        editar(false);
     }
 }

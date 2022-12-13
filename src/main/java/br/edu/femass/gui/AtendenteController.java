@@ -48,7 +48,19 @@ public class AtendenteController implements Initializable {
 
     @FXML
     public void btnRealizarEmprestimo(ActionEvent event){
-        System.out.println("Realizar Empréstimo");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/TelaEmprestimo.fxml"));
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/styles/Styles.css");
+            scene.getRoot().setStyle("-fx-font-family: 'serif'");
+            Stage stage = new Stage();
+            stage.setTitle("Realizar Emprestimo");
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML

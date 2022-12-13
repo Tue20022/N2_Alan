@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Leitor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected long id;
+    protected Long id;
     protected String nome;
     protected String endereco;
     protected String telefone;
@@ -58,5 +58,10 @@ public class Leitor {
 
     public void setPrazoMaximoDevolucao(Integer prazo) {
         this.prazoMaximoDevolucao = prazo;
+    }
+
+    @Override
+    public String toString() {
+        return (id + " - " + nome);
     }
 }

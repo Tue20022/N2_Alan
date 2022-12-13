@@ -152,5 +152,6 @@ public class AlunoController implements Initializable {
         );
 
         preencherTabela();
+        editar(false);
     }
 }

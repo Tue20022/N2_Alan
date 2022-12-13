@@ -158,5 +158,6 @@ public class ProfessorController implements Initializable {
         );
 
         preencherTabela();
+        editar(false);
     }
 }

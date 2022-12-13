@@ -131,5 +131,6 @@ public class LivroController implements Initializable {
 
         preencherCombo();
         preencherTabela();
+        editar(false);
     }
 }

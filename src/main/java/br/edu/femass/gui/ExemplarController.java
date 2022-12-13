@@ -1,24 +1,21 @@
 package br.edu.femass.gui;
 
-import br.edu.femass.dao.Dao;
 import br.edu.femass.dao.DaoExemplar;
 import br.edu.femass.dao.DaoLivro;
 import br.edu.femass.model.Exemplar;
 import br.edu.femass.model.Livro;
-import br.edu.femass.model.Professor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 
-import javax.swing.*;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -26,6 +23,15 @@ import java.util.ResourceBundle;
 public class ExemplarController implements Initializable {
     private DaoExemplar dao = new DaoExemplar();
     private DaoLivro daoLivro = new DaoLivro();
+    private Boolean incluindo;
+    @FXML
+    private Button btnGravar;
+    @FXML
+    private Button btnIncluir;
+    @FXML
+    private Button btnAlterar;
+    @FXML
+    private Button btnExcluir;
     @FXML
     private ComboBox<Livro> cboLivro;
     @FXML
@@ -33,29 +39,59 @@ public class ExemplarController implements Initializable {
     @FXML
     private TableColumn<Exemplar,Long> colId = new TableColumn<>();
     @FXML
-    private TableColumn<Livro,String> colTitulo = new TableColumn<>();
-    @FXML
     private TableColumn<Livro,String> colLivro = new TableColumn<>();
+    private Exemplar exemplar = new Exemplar();
+    private Livro livro;
 
-    public void btnDeletar(ActionEvent event){
-        System.out.println("Deletar");
-    }
+    @FXML
+    private void gravar_click(ActionEvent event) {
+        exemplar.setLivro(cboLivro.getSelectionModel().getSelectedItem());
+        livro = cboLivro.getSelectionModel().getSelectedItem();
+        exemplar.setTitulo(livro.getTitulo());
+        if (incluindo) {
+            dao.inserir(exemplar);
+        } else {
+            dao.alterar(exemplar);
+        }
 
-    public void btnAlterar(javafx.event.ActionEvent event){
-        System.out.println("Alterar");
-    }
-
-    public void btnInserir(javafx.event.ActionEvent event){
-        System.out.println("Inserir");
-    }
-
-    public void btnSalvar(ActionEvent event){
-        Exemplar exemplar =new Exemplar(
-                    cboLivro.getSelectionModel().getSelectedItem()
-        );
-        dao.inserir(exemplar);
-        JOptionPane.showMessageDialog(null, "Exemplar cadastrado");
         preencherTabela();
+        editar(false);
+
+    }
+
+    @FXML
+    private void incluir_click(ActionEvent event) {
+        editar(true);
+        preencherCombo();
+        preencherTabela();
+        incluindo = true;
+        exemplar = new Exemplar();
+        cboLivro.requestFocus();
+    }
+
+    @FXML
+    private void alterar_click(ActionEvent event) {
+        exemplar = tabela.getSelectionModel().getSelectedItem();
+        editar(true);
+        preencherCombo();
+        preencherTabela();
+        incluindo = false;
+    }
+
+    @FXML
+    private void excluir_click(ActionEvent event) {
+        exemplar = tabela.getSelectionModel().getSelectedItem();
+        dao.apagar(exemplar);
+
+        preencherTabela();
+    }
+
+    private void editar(boolean habilitar) {
+        cboLivro.setDisable(!habilitar);
+        btnGravar.setDisable(!habilitar);
+        btnAlterar.setDisable(habilitar);
+        btnIncluir.setDisable(habilitar);
+        btnExcluir.setDisable(habilitar);
     }
 
     private void preencherTabela() {
@@ -63,6 +99,7 @@ public class ExemplarController implements Initializable {
 
         ObservableList<Exemplar> data = FXCollections.observableArrayList(exemplares);
         tabela.setItems(data);
+        tabela.refresh();
     }
 
     private void preencherCombo() {
@@ -73,13 +110,9 @@ public class ExemplarController implements Initializable {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle rb) {
         colId.setCellValueFactory(
                 new PropertyValueFactory<Exemplar, Long>("id")
-        );
-
-        colTitulo.setCellValueFactory(
-                new PropertyValueFactory<Livro, String>("titulo")
         );
 
         colLivro.setCellValueFactory(
@@ -88,5 +121,6 @@ public class ExemplarController implements Initializable {
 
         preencherCombo();
         preencherTabela();
+        editar(false);
     }
 }

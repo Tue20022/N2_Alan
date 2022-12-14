@@ -63,7 +63,7 @@ public class EmprestimoController implements Initializable {
         }else{
             dao.alterar(emprestimo);
         }
-        tabela.refresh();
+        preencherTabela();
 
         editar(false);
     }

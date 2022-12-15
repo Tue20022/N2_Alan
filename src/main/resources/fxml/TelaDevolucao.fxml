@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="631.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.DevolucaoController">
    <children>
-      <TableView fx:id="tabela" layoutX="27.0" layoutY="55.0" prefHeight="316.0" prefWidth="574.0">
+      <TableView fx:id="tabela" layoutX="29.0" layoutY="72.0" prefHeight="316.0" prefWidth="574.0">
          <columns>
-            <TableColumn fx:id="colId" prefWidth="42.0" text="ID" />
-            <TableColumn fx:id="colExemplar" prefWidth="187.0" text="Exemplar" />
+            <TableColumn fx:id="colId" prefWidth="38.0" text="ID" />
+            <TableColumn fx:id="colExemplar" prefWidth="191.0" text="Exemplar" />
             <TableColumn fx:id="colLeitor" prefWidth="172.0" text="Leitor" />
-            <TableColumn fx:id="colData" prefWidth="94.0" text="Data" />
-            <TableColumn fx:id="colPrevisao" prefWidth="78.0" text="Previsão" />
+            <TableColumn fx:id="colData" prefWidth="90.0" text="Data" />
+            <TableColumn fx:id="colPrevisao" prefWidth="82.0" text="Previsão" />
          </columns>
       </TableView>
-      <Label layoutX="180.0" layoutY="22.0" text="Empréstimo com devolução pendente">
+      <Label layoutX="181.0" layoutY="31.0" text="Empréstimo com devolução pendente">
          <font>
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btnGravar" layoutX="518.0" layoutY="386.0" mnemonicParsing="false" onAction="#gravar_click" prefHeight="25.0" prefWidth="83.0" text="Concluir">
-         <font>
-            <Font name="Arial" size="12.0" />
-         </font>
-      </Button>
    </children>
 </Pane>

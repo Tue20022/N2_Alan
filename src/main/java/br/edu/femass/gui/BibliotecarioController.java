@@ -17,7 +17,7 @@ public class BibliotecarioController implements Initializable{
     @FXML
     private void btnAutor(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/telaAutor.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/TelaAutor.fxml"));
 
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/styles/Styles.css");
@@ -34,7 +34,7 @@ public class BibliotecarioController implements Initializable{
     @FXML
     private void btnLivro(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/telaLivro.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/TelaLivro.fxml"));
 
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/styles/Styles.css");
@@ -51,7 +51,7 @@ public class BibliotecarioController implements Initializable{
     @FXML
     private void btnExemplar(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/telaExemplar.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/TelaExemplar.fxml"));
 
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/styles/Styles.css");
@@ -67,7 +67,19 @@ public class BibliotecarioController implements Initializable{
 
     @FXML
     private void btnLeitoresAtrasados(ActionEvent event){
-        System.out.println("leiytores Atrasdos");
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/TelaEmprestimosAtrasados.fxml"));
+
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/styles/Styles.css");
+            scene.getRoot().setStyle("-fx-font-family: 'serif'");
+            Stage stage = new Stage();
+            stage.setTitle("Cadastro de Exemplares");
+            stage.setScene(scene);
+            stage.show();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override

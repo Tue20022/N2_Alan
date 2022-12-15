@@ -6,10 +6,8 @@ import br.edu.femass.model.Exemplar;
 import br.edu.femass.model.Leitor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -19,10 +17,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class DevolucaoController implements Initializable {
-
-    @FXML
-    private Button btnGravar;
+public class EmprestimosAtrasadosController implements Initializable {
     @FXML
     private TableView<Emprestimo> tabela = new TableView<>();
     @FXML
@@ -32,25 +27,14 @@ public class DevolucaoController implements Initializable {
     @FXML
     private TableColumn<Leitor, String> colLeitor = new TableColumn<>();
     @FXML
-    private TableColumn<Emprestimo, LocalDate> colData = new TableColumn<Emprestimo, LocalDate>();
+    private TableColumn<Emprestimo, LocalDate> colData = new TableColumn<>();
     @FXML
-    private TableColumn<Emprestimo, LocalDate> colPrevisao = new TableColumn<Emprestimo, LocalDate>();
+    private TableColumn<Emprestimo, LocalDate> colPrevisao = new TableColumn<>();
     private DaoEmprestimo dao = new DaoEmprestimo();
-    private Emprestimo emprestimo;
-    private Exemplar exemplar;
-
-    @FXML
-    private void gravar_click(ActionEvent event){
-        emprestimo = tabela.getSelectionModel().getSelectedItem();
-        emprestimo.setDatadevolucao(LocalDate.now());
-        exemplar = emprestimo.getExemplar();
-        exemplar.setDisponivel(true);
-        dao.alterar(emprestimo);
-        preencherTabela();
-    }
 
     private void preencherTabela(){
-        List<Emprestimo> emprestimos = dao.buscarPendentes();
+        List<Emprestimo> emprestimos = dao.buscarAtrasados();
+
         ObservableList<Emprestimo> data = FXCollections.observableArrayList(emprestimos);
         tabela.setItems(data);
         tabela.refresh();

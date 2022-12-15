@@ -4,7 +4,6 @@ import br.edu.femass.dao.DaoAutor;
 import br.edu.femass.dao.DaoLivro;
 import br.edu.femass.model.Autor;
 import br.edu.femass.model.Livro;
-import br.edu.femass.model.Professor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +13,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-import javax.swing.*;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;

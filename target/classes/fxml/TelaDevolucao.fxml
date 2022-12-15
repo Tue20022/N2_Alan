@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="631.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.femass.gui.DevolucaoController">
    <children>
-      <TableView fx:id="tabela" layoutX="29.0" layoutY="72.0" prefHeight="316.0" prefWidth="574.0">
+      <TableView fx:id="tabela" layoutX="29.0" layoutY="72.0" prefHeight="310.0" prefWidth="574.0">
          <columns>
             <TableColumn fx:id="colId" prefWidth="38.0" text="ID" />
             <TableColumn fx:id="colExemplar" prefWidth="191.0" text="Exemplar" />
@@ -21,5 +21,6 @@
             <Font name="Arial Bold" size="15.0" />
          </font>
       </Label>
+      <Button fx:id="btnGravar" layoutX="536.0" layoutY="388.0" mnemonicParsing="false" onAction="#gravar_click" prefHeight="25.0" prefWidth="67.0" text="Concluir" />
    </children>
 </Pane>

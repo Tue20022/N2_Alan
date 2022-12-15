@@ -15,8 +15,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
-import javax.swing.*;
-
 public class AutorController implements Initializable {
     
     @FXML
@@ -77,7 +75,7 @@ public class AutorController implements Initializable {
     @FXML
     private void alterar_click(ActionEvent event) {
         editar(true);
-
+        preencherTabela();
         incluindo = false;
     }
 
